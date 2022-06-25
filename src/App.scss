@@ -1,0 +1,15 @@
+@use "./sass/variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: variables.$base-font;
+  color: variables.$primary-black;
+}
+
+body {
+  background-color: variables.$primary-grey;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,14 @@
+@mixin card-media-query {
+  @media only screen and (min-width: 1201px) {
+    flex: 0 0 calc(25% - 1vw);
+  }
+  @media only screen and (max-width: 1200px) {
+    flex: 0 0 calc(33% - 1vw);
+  }
+  @media only screen and (max-width: 720px) {
+    flex: 0 0 calc(50% - 1vw);
+  }
+  @media only screen and (max-width: 510px) {
+    flex: 0 0 calc(100% - 1vw);
+  }
+}
