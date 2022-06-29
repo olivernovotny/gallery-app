@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import styles from "./CardList.module.scss";
 import Card from "../Card/Card";
 import AddCard from "../AddCard/AddCard";
-import { useGalleries } from "../../hooks/useGalleries";
+import { useGalleriesQuery } from "../../hooks/queries";
+import AddCardModal from "../modal/AddCardModal/AddCardModal";
 
 function CardList() {
-  const { data, error } = useGalleries();
+  const { data, refetch } = useGalleriesQuery();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  if (error) {
-    console.error(error.message);
-  }
+  useEffect(() => {
+    refetch();
+  }, [isModalOpen, refetch]);
 
   return (
     <div className={styles.mainContainer}>
@@ -20,7 +24,18 @@ function CardList() {
           imagePath={item.image ? item.image.fullpath : null}
         />
       ))}
-      <AddCard title="Pridať kategóriu" />
+      <AddCard title="Pridať kategóriu" setIsModalOpen={setIsModalOpen} />
+      {isModalOpen ? <AddCardModal setIsModalOpen={setIsModalOpen} /> : null}
+      <ToastContainer
+        position="bottom-center"
+        autoClose={4000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        closeButton={false}
+        style={{ paddingRight: 0 }}
+        pauseOnFocusLoss={false}
+      />
     </div>
   );
 }

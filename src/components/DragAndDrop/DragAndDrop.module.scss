@@ -1,0 +1,72 @@
+@use "../../sass/variables";
+.container {
+  border: 1px dashed #dddddd;
+  border-radius: 4px;
+  padding: 48px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  h5 {
+    color: #000000;
+    font-size: 1rem;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.56;
+  }
+
+  label {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .removeButton {
+    background-color: variables.$primary-white;
+    color: variables.$primary-black;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.56;
+    width: fit-content;
+    border: none;
+  }
+
+  .fileContainer {
+    padding: 8px 0;
+  }
+
+  .fileUploadContainer {
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 500;
+    letter-spacing: 0;
+    border: 2px solid variables.$primary-black;
+    border-radius: 4px;
+    padding: 15px 0;
+    background-color: variables.$primary-white;
+    color: variables.$primary-black;
+    margin-top: 24px;
+
+    @media only screen and (min-width: 1701px) {
+      width: 37%;
+    }
+    @media only screen and (max-width: 1700px) {
+      width: 50%;
+    }
+    @media only screen and (max-width: 1400px) {
+      width: 70%;
+    }
+    @media only screen and (max-width: 510px) {
+      width: 90%;
+    }
+  }
+}

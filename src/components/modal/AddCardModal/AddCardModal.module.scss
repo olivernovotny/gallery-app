@@ -1,0 +1,18 @@
+@use "../../../sass/variables";
+
+.textField {
+  color: black;
+  width: 100%;
+}
+
+button {
+  background: variables.$primary-black;
+  border-radius: 4px;
+  width: 100%;
+  padding: 22px 0px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 24px;
+}

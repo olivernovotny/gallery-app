@@ -1,7 +1,8 @@
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 import { Routes, Route } from "react-router-dom";
-import { GalleryDetail, Home } from "./routes";
+import { GalleryDetail, Home, InvalidPage } from "./routes";
 import { PageWrapper } from "./components";
 import "./App.scss";
 
@@ -20,8 +21,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/gallery/:id" element={<GalleryDetail />} />
+          <Route path="*" element={<InvalidPage />} />
         </Routes>
       </PageWrapper>
+
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
