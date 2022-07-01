@@ -1,4 +1,5 @@
 @use "../../sass/mixins";
+@use "../../sass/variables";
 
 .textContainer {
   display: flex;
@@ -12,4 +13,22 @@
   width: 100%;
   height: 100%;
   text-decoration: none;
+}
+
+.numberOfPhotosContainer {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 5px 12px;
+  color: variables.$primary-white;
+  background-color: variables.$secondary-dark-grey;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.contentContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }

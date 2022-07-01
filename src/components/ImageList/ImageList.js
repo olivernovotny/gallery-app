@@ -13,7 +13,7 @@ function ImageList() {
   const { id } = useParams();
   const { data, refetch } = useGalleryQuery(id);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isImageOpen, setIsImageOpen] = useState(false);
+  const [imageOpen, setImageOpen] = useState(null);
 
   useEffect(() => {
     refetch();
@@ -25,12 +25,18 @@ function ImageList() {
         <ImageCard
           key={item.name}
           imagePath={item.fullpath}
-          setIsImageOpen={setIsImageOpen}
+          setImageOpen={setImageOpen}
         />
       ))}
       <AddCard title="Pridať fotky" setIsModalOpen={setIsModalOpen} />
       {isModalOpen ? <AddPhotoModal setIsModalOpen={setIsModalOpen} /> : null}
-      {isImageOpen ? <ImagePreview /> : null}
+      {imageOpen && data ? (
+        <ImagePreview
+          imageData={data.images}
+          setImageOpen={setImageOpen}
+          imageOpen={imageOpen}
+        />
+      ) : null}
       <ToastContainer
         position="bottom-center"
         autoClose={4000}

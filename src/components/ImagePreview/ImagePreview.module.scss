@@ -11,19 +11,58 @@
 
 .modalContainer {
   position: fixed;
-  background: variables.$primary-white;
-  width: 80%;
-  padding: 48px;
   top: 50%;
   left: 50%;
+  max-width: 75vw;
+  max-height: 80vh;
   transform: translateX(-50%) translateY(-50%);
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  .clickableIcon {
-    position: absolute;
+  border-radius: 16px;
+  img {
+    max-width: 75vw;
+    max-height: 80vh;
+    border-radius: 16px;
+  }
 
-    top: 5%;
-    right: 5%;
+  .closeContainer,
+  .backContainer,
+  .forwardContainer {
+    border-radius: 50%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 24px variables.$secondary-light-grey;
+    background-color: variables.$primary-white;
+
+    @media only screen and (min-width: 701px) {
+      width: 80px;
+      height: 80px;
+    }
+
+    @media only screen and (max-width: 700px) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .closeContainer {
+    transform: translateX(-50%) translateY(+50%);
+    top: 0;
+    right: 0;
+    opacity: 56%;
+  }
+
+  .backContainer {
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+  }
+
+  .forwardContainer {
+    right: 0;
+    bottom: 50%;
+    transform: translate(50%, 50%);
   }
 }

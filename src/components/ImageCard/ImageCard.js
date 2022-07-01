@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import CardWrapper from "../layout/CardWrapper/CardWrapper";
 import getFullImagePath from "../../utils/helpers/getFullImagePath";
 
-function ImageCard({ imagePath, setIsImageOpen }) {
+function ImageCard({ imagePath, setImageOpen }) {
   const [fullImagePath, setFullImagePath] = useState(
     getFullImagePath(imagePath)
   );
@@ -16,7 +16,7 @@ function ImageCard({ imagePath, setIsImageOpen }) {
         loading="lazy"
         width="100%"
         height="100%"
-        onClick={() => setIsImageOpen(true)}
+        onClick={() => setImageOpen(imagePath)}
       />
     </CardWrapper>
   );

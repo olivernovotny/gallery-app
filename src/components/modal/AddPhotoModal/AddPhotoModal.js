@@ -7,22 +7,20 @@ import { useAddImageMutation } from "../../../hooks/mutations";
 function AddPhotoModal({ setIsModalOpen }) {
   const { id } = useParams();
 
-  const [uploadFile, setUploadFile] = useState([]);
-
+  const [uploadedFiles, setUploadedFiles] = useState([]);
   const { mutate, isSuccess } = useAddImageMutation();
 
   if (isSuccess) {
-    setUploadFile([]);
     setIsModalOpen(false);
   }
 
   return (
     <ModalWrapper title="Pridať fotky" setIsModalOpen={setIsModalOpen}>
-      <DragAndDrop setUploadFile={setUploadFile} uploadFile={uploadFile} />
+      <DragAndDrop setUploadedFiles={setUploadedFiles} />
       <button
         type="button"
         onClick={() => {
-          uploadFile.forEach((item) => mutate({ id, file: item }));
+          uploadedFiles.forEach((item) => mutate({ id, file: item }));
         }}
       >
         Pridať
