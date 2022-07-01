@@ -12,8 +12,6 @@ function Card({ galleryName, imagePath }) {
     getFullImagePath(imagePath)
   );
 
-  console.log();
-
   return (
     <CardWrapper>
       <Link to={`/gallery/${galleryName}`} className={styles.linkContainer}>

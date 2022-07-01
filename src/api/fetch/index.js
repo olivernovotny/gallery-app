@@ -59,5 +59,5 @@ export async function postImage(variables) {
 
       return res.json();
     })
-    .catch((err) => console.error(err.message));
+    .catch();
 }
