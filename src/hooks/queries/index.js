@@ -1,10 +1,10 @@
 import { useQuery } from "react-query";
-import { fetchApiData } from "../../api/fetch";
+import { getGalleryDetail, getGalleries } from "../../api/fetch";
 
 export function useGalleriesQuery() {
-  return useQuery("galleries", () => fetchApiData("/gallery"));
+  return useQuery("galleries", getGalleries);
 }
 
 export function useGalleryQuery(id) {
-  return useQuery(["gallery", id], () => fetchApiData(`/gallery/${id}`));
+  return useQuery(["gallery", id], () => getGalleryDetail(id));
 }

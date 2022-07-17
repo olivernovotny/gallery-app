@@ -16,14 +16,16 @@ function Card({ galleryName, imagePath }) {
     <CardWrapper>
       <Link to={`/gallery/${galleryName}`} className={styles.linkContainer}>
         <div className={styles.contentContainer}>
-          <img
-            src={fullImagePath}
-            alt={imagePath ? "Gallery title." : "Gallery has no title."}
-            onError={() => setFullImagePath("./images/no-image.png")}
-            loading="lazy"
-            width="100%"
-            height="75%"
-          />
+          <div className={styles.imageContainer}>
+            <img
+              src={fullImagePath}
+              alt={imagePath ? "Gallery title." : "Gallery has no title."}
+              onError={() => setFullImagePath("./images/no-image.png")}
+              loading="lazy"
+              width="100%"
+              height="100%"
+            />
+          </div>
           <div className={styles.numberOfPhotosContainer}>
             {data ? getNumberOfImagesString(data.images) : ""}
           </div>

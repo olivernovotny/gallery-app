@@ -12,3 +12,9 @@
     flex: 0 0 calc(100% - 1vw);
   }
 }
+
+@mixin subtitle-style {
+  padding: 3vh 0;
+  font-weight: 400;
+  font-size: 1.125rem;
+}

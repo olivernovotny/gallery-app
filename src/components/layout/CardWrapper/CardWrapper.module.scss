@@ -12,9 +12,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 
   p {
     margin-top: 10%;
+  }
+
+  img {
+    object-fit: cover;
   }
 
   @include mixins.card-media-query;

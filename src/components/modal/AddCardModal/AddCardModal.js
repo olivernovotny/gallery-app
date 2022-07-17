@@ -1,15 +1,18 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { TextField } from "@mui/material";
 import ModalWrapper from "../ModalWrapper/ModalWrapper";
 import styles from "./AddCardModal.module.scss";
 import { useAddGalleryMutation } from "../../../hooks/mutations";
 
 function AddCardModal({ setIsModalOpen }) {
+  const navigate = useNavigate();
   const galleryName = useRef();
   const { mutate, isSuccess } = useAddGalleryMutation();
 
   if (isSuccess) {
     setIsModalOpen(false);
+    navigate(`../gallery/${galleryName.current.value}`, { replace: true });
   }
 
   return (

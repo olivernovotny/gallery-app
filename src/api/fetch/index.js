@@ -1,7 +1,13 @@
-import { API_URL } from "../../utils/constants";
+export async function getGalleries() {
+  return fetch(`${process.env.REACT_APP_API_URL}gallery`).then((res) =>
+    res.json()
+  );
+}
 
-export async function fetchApiData(url) {
-  return fetch(`${API_URL}${url}`).then((res) => res.json());
+export async function getGalleryDetail(id) {
+  return fetch(`${process.env.REACT_APP_API_URL}gallery/${id}`).then((res) =>
+    res.json()
+  );
 }
 
 export async function postGallery(galleryName) {
@@ -9,7 +15,7 @@ export async function postGallery(galleryName) {
     name: galleryName,
   };
 
-  return fetch(`${API_URL}/gallery`, {
+  return fetch(`${process.env.REACT_APP_API_URL}/gallery`, {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     headers: {
       "Content-Type": "application/json",
@@ -34,6 +40,7 @@ export async function postGallery(galleryName) {
     })
     .catch();
 }
+
 export async function postImage(variables) {
   if (!variables.file.name.match(/.(jpg|jpeg)$/i)) {
     return Promise.reject(Error("Nesprávny formát obrázka"));
@@ -41,7 +48,7 @@ export async function postImage(variables) {
   const fd = new FormData();
   fd.append("image", variables.file, variables.file.name);
 
-  return fetch(`${API_URL}gallery/${variables.id}`, {
+  return fetch(`${process.env.REACT_APP_API_URL}gallery/${variables.id}`, {
     method: "POST",
     body: fd,
   })

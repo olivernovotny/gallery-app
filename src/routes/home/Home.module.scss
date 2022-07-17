@@ -1,5 +1,5 @@
+@use "../../sass/mixins";
+
 .subtitle {
-  padding: 3vh 0;
-  font-weight: 400;
-  font-size: 1.125rem;
+  @include mixins.subtitle-style;
 }
