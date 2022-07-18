@@ -1,9 +1,11 @@
-function getNumberOfImagesString(galleryImages) {
-  if (galleryImages.length === 1) return "1 fotka";
-  if (galleryImages.length > 1 && galleryImages.length < 5)
-    return `${galleryImages.length} fotky`;
+import i18n from "../../languague/i18n";
 
-  return `${galleryImages.length} fotiek`;
+function getNumberOfImagesString(galleryImages) {
+  if (galleryImages.length === 1) return `1 ${i18n.t("photo_1")}`;
+  if (galleryImages.length > 1 && galleryImages.length < 5)
+    return `${galleryImages.length} ${i18n.t("photo_2")}`;
+
+  return `${galleryImages.length} ${i18n.t("photo_5")}`;
 }
 
 export default getNumberOfImagesString;

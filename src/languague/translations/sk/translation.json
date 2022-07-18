@@ -1,0 +1,17 @@
+{
+  "photo_gallery": "Fotogaléria",
+  "categories": "Kategórie",
+  "photo_1": "fotka",
+  "photo_2": "fotky",
+  "photo_5": "fotiek",
+  "invalid_page": "Stránka ktorú hľadáte neexistuje",
+  "add_category": "Pridať kategóriu",
+  "add": "Pridať",
+  "category_name": "Názov kategórie",
+  "add_photos": "Pridať fotky",
+  "or": "alebo",
+  "select_files": "Vyberte súbory",
+  "drop_photos_here": "Sem presuňte fotky",
+  "gallery_successfully_added": "Galéria bola úspešne vytvorená",
+  "photo_successfully_added": "Fotka bola úspešne pridaná"
+}

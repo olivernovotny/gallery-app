@@ -17,7 +17,7 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <PageWrapper title="Fotogaléria">
+      <PageWrapper title="photo_gallery">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/gallery/:id" element={<GalleryDetail />} />

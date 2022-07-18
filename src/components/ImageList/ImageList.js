@@ -28,7 +28,7 @@ function ImageList() {
           setImageOpen={setImageOpen}
         />
       ))}
-      <AddCard title="Pridať fotky" setIsModalOpen={setIsModalOpen} />
+      <AddCard title="add_photos" setIsModalOpen={setIsModalOpen} />
       {isModalOpen ? <AddPhotoModal setIsModalOpen={setIsModalOpen} /> : null}
       {imageOpen && data ? (
         <ImagePreview

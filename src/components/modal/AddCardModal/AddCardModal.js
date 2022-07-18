@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { TextField } from "@mui/material";
 import ModalWrapper from "../ModalWrapper/ModalWrapper";
 import styles from "./AddCardModal.module.scss";
@@ -7,6 +8,7 @@ import { useAddGalleryMutation } from "../../../hooks/mutations";
 
 function AddCardModal({ setIsModalOpen }) {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const galleryName = useRef();
   const { mutate, isSuccess } = useAddGalleryMutation();
 
@@ -16,10 +18,10 @@ function AddCardModal({ setIsModalOpen }) {
   }
 
   return (
-    <ModalWrapper title="Pridať kategóriu" setIsModalOpen={setIsModalOpen}>
+    <ModalWrapper title="add_category" setIsModalOpen={setIsModalOpen}>
       <TextField
         className={styles.textField}
-        label="Názov kategórie"
+        label={t("category_name")}
         color="info"
         inputRef={galleryName}
         required
@@ -30,7 +32,7 @@ function AddCardModal({ setIsModalOpen }) {
           mutate(galleryName.current.value);
         }}
       >
-        Pridať
+        {t("add")}
       </button>
     </ModalWrapper>
   );

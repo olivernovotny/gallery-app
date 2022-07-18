@@ -1,0 +1,17 @@
+{
+  "photo_gallery": "Photo Gallery",
+  "categories": "Categories",
+  "photo_1": "photo",
+  "photo_2": "photos",
+  "photo_5": "photos",
+  "invalid_page": "This page doesn`t seem to exist",
+  "add_category": "Add category",
+  "add": "Add",
+  "category_name": "Category name",
+  "add_photos": "Add photos",
+  "or": "or",
+  "select_files": "Select files",
+  "drop_photos_here": "Drop photos here",
+  "gallery_successfully_added": "Gallery has been successfully created",
+  "photo_successfully_added": "Photo has been successfully added"
+}

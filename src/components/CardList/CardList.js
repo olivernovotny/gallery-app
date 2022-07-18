@@ -24,7 +24,7 @@ function CardList() {
           imagePath={item.image ? item.image.fullpath : null}
         />
       ))}
-      <AddCard title="Pridať kategóriu" setIsModalOpen={setIsModalOpen} />
+      <AddCard title="add_category" setIsModalOpen={setIsModalOpen} />
       {isModalOpen ? <AddCardModal setIsModalOpen={setIsModalOpen} /> : null}
       <ToastContainer
         position="bottom-center"
